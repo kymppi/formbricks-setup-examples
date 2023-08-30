@@ -1,39 +1,41 @@
 # NextJs Pages Directory Integration with Formbricks
 
-This repository provides an example of how to integrate Formbricks with a NextJS application with the Pages directory configuration.
+This repository is an example of how to integrate Formbricks with a NextJS application with the Pages directory configuration.
 
-For a comprehensive step-by-step guide, please refer to the official [Formbricks NextJs Guide](https://formbricks.com/docs/getting-started/framework-guides#next-js).
+For a comprehensive step-by-step guide to integrate Formbricks in your app, please refer to the official [Formbricks NextJs Guide](https://formbricks.com/docs/getting-started/framework-guides#next-js).
 
-## Setup Instructions
+## Setup Instructions we Followed
 
-1. Create a new NextJs application:
+1. Created a new NextJs application:
 
    ```sh
    npx create-next-app@latest
    ```
 
-2. Navigate to the created application directory:
+2. Navigated to the created application directory:
 
    ```sh
    cd nextjs-pages
    ```
 
-3. Install existing dependecies:
+3. Installed existing dependecies:
 
    ```sh
    npm install
    ```
 
-4. Install the Formbricks JS library:
+4. Installed the Formbricks JS library:
 
    ```sh
    npm install --save @formbricks/js
    ```
 
-5. Start the NextJs development server:
+5. Edited the Formbricks Enviornment ID and API Host:
+
+6. Started the NextJs development server:
 
    ```sh
    npm run dev
    ```
 
-With these steps, you should have a running NextJs application with Formbricks integrated. If you run into any issues, reach out to us on our [Discord server](https://formbricks.com/discord).
+With these steps, we had a running NextJs application with Formbricks integrated.
