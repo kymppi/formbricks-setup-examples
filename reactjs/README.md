@@ -18,13 +18,19 @@ For a comprehensive step-by-step guide, please refer to the official [Formbricks
    cd react-js
    ```
 
-3. Install the Formbricks JS library:
+3. Install existing dependecies:
+
+   ```sh
+   npm install
+   ```
+
+4. Install the Formbricks JS library:
 
    ```sh
    npm install --save @formbricks/js
    ```
 
-4. Start the React development server:
+5. Start the React development server:
 
    ```sh
    npm start
