@@ -23,6 +23,7 @@ Hey Hey, welcome to our monorepo where we host sample projects of different fram
 
 This repository provides you an example of how to integrate Formbricks with the following frameworks:
 
+- [HTML](./html/README.md)
 - [React](./reactjs/README.md)
 - [VueJs](./vuejs/README.md)
 - [NextJs App Directory](./nextjs-app/README.md)
