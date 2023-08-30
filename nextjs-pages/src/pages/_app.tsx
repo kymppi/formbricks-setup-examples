@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 
 if (typeof window !== "undefined") {
   formbricks.init({
-    environmentId: "cllxhby3p0b1fmr0her1wkwtq",
-    apiHost: "https://app.formbricks.com", // e.g. https://app.formbricks.com
+    environmentId: "<your-environment-id>",
+    apiHost: "https://app.formbricks.com",
     debug: true, // remove when in production
   });
 }

@@ -9,7 +9,7 @@ export default function FormbricksProvider() {
 
   useEffect(() => {
     formbricks.init({
-      environmentId: "cllxhby3p0b1fmr0her1wkwtq",
+      environmentId: "<your-environment-id>",
       apiHost: "https://app.formbricks.com",
       debug: true, // remove when in production
     });
