@@ -30,9 +30,41 @@ For a comprehensive step-by-step guide to integrate Formbricks in your app, plea
    npm install --save @formbricks/js
    ```
 
-5. Edited the Formbricks Enviornment ID and API Host:
+5. Edited the [app/formbricks.tsx](./src/pages/_app.tsx) file:
 
-6. Started the NextJs development server:
+   ```ts
+   // other import
+   import formbricks from "@formbricks/js";
+   import { useEffect } from "react";
+   import { useRouter } from "next/router";
+
+   if (typeof window !== "undefined") {
+     formbricks.init({
+       environmentId: "<environment-id>",
+       apiHost: "<api-host>",
+       debug: true, // remove when in production
+     });
+   }
+
+   export default function App({ Component, pageProps }: AppProps) {
+     const router = useRouter();
+
+     useEffect(() => {
+       // Connect next.js router to Formbricks
+       const handleRouteChange = formbricks?.registerRouteChange;
+       router.events.on("routeChangeComplete", handleRouteChange);
+
+       return () => {
+         router.events.off("routeChangeComplete", handleRouteChange);
+       };
+     }, []);
+     return <Component {...pageProps} />;
+   }
+   ```
+
+6. Edited the Formbricks Enviornment ID and API Host
+
+7. Started the NextJs development server:
 
    ```sh
    npm run dev

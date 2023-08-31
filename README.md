@@ -21,7 +21,7 @@
 
 Hey Hey, welcome to our monorepo where we host example projects integrated with Formbricks of different frameworks.
 
-This repository is basically a journal of how we integrated Formbricks with the following frameworks:
+Here, you'll find a curated collection of example projects, each showcasing the integration of Formbricks with various frameworks such as:
 
 - [HTML](./html/README.md)
 - [React](./reactjs/README.md)
@@ -29,10 +29,10 @@ This repository is basically a journal of how we integrated Formbricks with the 
 - [NextJs App Directory](./nextjs-app/README.md)
 - [NextJs Pages Directory](./nextjs-pages/README.md)
 
-For a comprehensive step-by-step guide to integrate it in your app, please refer to the official [Formbricks Framework Guides](https://formbricks.com/docs/getting-started/framework-guides).
+For a detailed guide on integrating Formbricks into your own applications, please refer to the official [Formbricks Framework Guides](https://formbricks.com/docs/getting-started/framework-guides).
 
-> Note: This repository is not expected to be cloned and ran! This is just us walking you through how one can integrate Formbricks into a skeleton framework app.
+> Please note: This repository is intended for demonstration purposes and is not designed to be cloned and run directly!
 
-Are you using Formbricks with a framework that is not listed here? We would love to get it listed here! Feel free to open a pull request with your example project.
+Are you integrating Formbricks with a framework that is not listed here? We'd be thrilled to include it! Feel free to open a pull request with your example project.
 
-If you have any questions, reach out to us on our [Discord server](https://formbricks.com/discord).
+Questions? Join the conversation over on our [Discord server](https://formbricks.com/discord).

@@ -30,9 +30,23 @@ For a comprehensive step-by-step guide to integrate Formbricks in your app, plea
    npm install --save @formbricks/js
    ```
 
-5. Edited the Formbricks Enviornment ID and API Host:
+5.Added the below in my [src/App.js](./src/App.js) file:
 
-6. Start the React development server:
+   ```js
+   import formbricks from "@formbricks/js";
+
+   if (typeof window !== "undefined") {
+      formbricks.init({
+         environmentId: "<environment-id>",
+         apiHost: "<api-host>",
+         debug: true, // remove when in production
+      });
+   }
+   ```
+
+6. Edited the Formbricks Enviornment ID and API Host
+
+7. Start the React development server:
 
    ```sh
    npm start
