@@ -12,7 +12,7 @@
       formbricks.init({
         environmentId: env.PUBLIC_FORMBRICKS_ENVIRONMENT_ID || 'not set',
         apiHost: 'https://app.formbricks.com', // Cloud Hosted API
-        debug: import.meta.env.DEV,
+        debug: import.meta.env.DEV, // Enable debug mode on dev
       });
 
       (window as any).formbricks = formbricks;

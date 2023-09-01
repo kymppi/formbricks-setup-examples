@@ -1,18 +1,78 @@
-# create-svelte
+# SvelteKit Integrttion with Formbricks
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This folder is an example for integrating Formbricks with a SvelteKit application.
 
-## Creating a project
+## Instructions
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Create a new SvelteKit application:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+   ```sh
+   npm create svelte@latest
+   ```
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+2. Navigate to the created application directory:
+
+   ```sh
+    cd <your app>
+   ```
+
+3. Install existing dependecies:
+
+   ```sh
+   npm install
+   ```
+
+4. Install the Formbricks JS library:
+
+   ```sh
+    npm install --save @formbricks/js
+   ```
+
+5. Create a Formbricks component to [lib/components/Formbricks.svelte](./lib/components/Formbricks.svelte) and add the below to it:
+
+   ```svelte
+   <script lang="ts">
+       import { navigating } from '$app/stores';
+       import { env } from '$env/dynamic/public';
+       import type fbT from '@formbricks/js';
+       import { onMount } from 'svelte';
+
+       let formbricks: typeof fbT;
+
+       onMount(() => {
+           import('@formbricks/js').then((fb) => {
+           formbricks = fb.default;
+           formbricks.init({
+               environmentId: env.PUBLIC_FORMBRICKS_ENVIRONMENT_ID || 'not set',
+               apiHost: 'https://app.formbricks.com', // Cloud Hosted API
+               debug: import.meta.env.DEV,
+           });
+
+           (window as any).formbricks = formbricks;
+           });
+       });
+
+       $: if ($navigating) formbricks.registerRouteChange();
+   </script>
+   ```
+
+6. Create a .env file at the root of your project and add the below to it:
+
+   ```sh
+   PUBLIC_FORMBRICKS_ENVIRONMENT_ID=<your environment id>
+   ```
+
+   By default it will use the Cloud Hosted instance. If you want to use a self-hosted instance, you need to modify the code a little bit in the formbricks component.
+
+7. Use the component in +layout.svelte:
+
+   ```svelte
+   <script lang="ts">
+       import Formbricks from '$lib/components/Formbricks.svelte';
+   </script>
+
+   <Formbricks />
+   ```
 
 ## Developing
 
