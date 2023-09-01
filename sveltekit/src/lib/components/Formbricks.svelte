@@ -1,5 +1,6 @@
 <script lang="ts">
   import { navigating } from '$app/stores';
+  import { env } from '$env/dynamic/public';
   import type fbT from '@formbricks/js';
   import { onMount } from 'svelte';
 
@@ -9,9 +10,9 @@
     import('@formbricks/js').then((fb) => {
       formbricks = fb.default;
       formbricks.init({
-        environmentId: 'clg6riezp0005lq0hzjimosc7',
-        apiHost: 'https://app.formbricks.com',
-        debug: true,
+        environmentId: env.PUBLIC_FORMBRICKS_ENVIRONMENT_ID || 'not set',
+        apiHost: 'https://app.formbricks.com', // Cloud Hosted API
+        debug: import.meta.env.DEV,
       });
 
       (window as any).formbricks = formbricks;
